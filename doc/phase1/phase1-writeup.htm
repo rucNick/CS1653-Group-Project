@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CS 1653 Project P1 Writeup</title>
+  <style>
+/* BEGIN CHANGES HERE */
+
+/* In this section, you may add CSS styling if desired */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', serif;
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+}
+
+header {
+  background-color: #232222;
+  color: #e6af2e;
+  text-align: left;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  max-width: 150px;
+  height: auto;
+  float: right;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.7em;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #ed210f;
+}
+
+section {
+  background-color: #333;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.4);
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #e6af2e;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.6;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+emph {
+  font-style: italic;
+}
+
+ol {
+  margin-left: 20px;
+  color: #e6af2e;
+}
+
+ol li {
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #333;
+  color: #e6e6e6;
+  font-size: 0.9em;
+}
+
+/* Button styling */
+button {
+  background-color: #e6af2e;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f0c040;
+}
+
+/* END CHANGES HERE */
+  </style>
+  <body>
+    <header>
+      <div>
+        <h1>CS 1653 Project P1 Writeup</h1>
+        <h2>
+<!-- BEGIN CHANGES HERE -->
+          GROUP NAME: BLACK MYTH CRYPTOGRAPHER <br>
+          Xingcheng Qian(xiq29@pitt.edu) | Nick Cao (ruc36@pitt.edu) | Dylan Kaing (dck34@pitt.edu) | Alex Acero (ala452@pitt.edu)
+        </h2>
+      </div>
+      <div>
+        <img src="/index/dce7fb056f0ad2ee856c21aa3705e69.png" alt="Black Myth Logo">
+      </div>
+<!-- END CHANGES HERE -->
+      
+    </header>
+    <section id="group">
+      <h2>1. Group Information</h2>
+<!-- BEGIN CHANGES HERE -->
+
+<h4>Roles each member will play:</h4>
+<ul>
+  <li>Xingcheng Qian: Qian is responsible for the front-end development work, and the main tasks include displaying 
+    the response content of the resource server through JavaScript to ensure that the data is displayed dynamically. 
+    Also responsible for the structural design of the website and writing CSS styles.</li>
+  <br>
+  <li>Nick Cao: Nick is proficient in Java and has a strong knowledge of data structure. He has experience with back-end 
+    development using Springboot2 and Maven dependencies. Nick is tasked with dealing with the resource servers and back-end 
+    programming through Java. Also, he will conduct penetration tests for the team.</li>
+  <br>
+  <li>Dylan Kaing: Dylan is proficient in Java and C. Hence, he is tasked with dealing the resource server that servers and 
+    stores all the posts on the website. This resource server also must be capable if the user is a normal user or a VIP user 
+    for proper data security. </li>
+  <br>
+  <li>Alex Acero: Alex has strong knowledge of web development using JavaScript frameworks, as well as automation knowledge 
+    through python scripts and database management through SQL. Alex is tasked with user authentication and login in the front-end. 
+    This means that, through JavaScript, he will establish a connection with the authentication server, expect an “ok” response, 
+    and then share this status with the resource server. </li>
+</ul>
+<br>
+<p>For the development process, we are using a structured GitHub workflow that includes personal branches, 
+  feature branches, and a main branch to manage development and debugging processes.  
+  Each member works on their section of the code making changes as they see fit, 
+  while ensuring communication with the rest of the group about what feature is being worked on. 
+  Once the code is reviewed and tested, it will be merged into the main branch. 
+  The group plans to meet after Tuesday class every week to have a progress report and coordinate co-dependent features. 
+  This way, it is simple to track deadlines and adjust to the time remaining for each phase of the project. 
+  Although the group has set member roles, each member is ready to assist other members in their development process should it become necessary. 
+</p>
+
+
+<!-- END CHANGES HERE -->
+    </section>
+    <section id="design">
+      <h2>2. Design Proposal</h2>
+<!-- BEGIN CHANGES HERE -->
+
+<p><h3>"CypherSpace"</h3>Is a secure message posting board, where users are able to create, 
+  edit, or delete posts. These posts are then publicly displayed for other users to read. 
+  CypherSpace also contains an additional VIP level, in which only select users can participate. 
+  VIP users may read all the posts including the normal ones, but normal users may not access VIP posts. 
+  There is an additional third permission level for this application: Administrator level. 
+  Administrators are not only allowed to view all posts, but they can also delete posts made by other 
+  users as well. Additionally, administrators are the ones who control who gets VIP access and may 
+  revoke said access if deemed necessary. Besides these proposed permission levels, a ground level 
+  “guest” may read normal user’s posts across any board but may not participate in any way. 
+</p>
+
+<p>There are different message boards in which users may choose to partake in, depending on 
+  their area of interest. The user will be free to select which board is currently in view. 
+  Messages are saved on a separate database, allowing for message persistence after a user has 
+  closed the page. User authentication is handled via login, and once it has been achieved the 
+  logged in state will persist allowing the user to create multiple posts without having to 
+  re-authenticate. 
+</p>
+
+<p>Given this, the authentication server must handle user registration and authentication, 
+  as well as deal with the permission level for each user. Usernames and passwords are encrypted 
+  to provide protection against unauthorized entry. Also, encryption is also applied to the messages 
+  to ensure that each message only reaches those with permission to view it. The resource server must 
+  be able to discern which user should be provided with the normal messages, and which can view the 
+  VIP section. Both normal and VIP posts are stored on a separate database.  
+</p>
+
+<!-- END CHANGES HERE -->
+    </section>
+    <section id="properties">
+      <h2>3. Security Properties</h2>
+<!-- BEGIN CHANGES HERE -->
+
+<ol>
+  <li><h4>Message Manipulability:</h4> Depending on the user's permissions level, they can have various actions. 
+    For example, a basic user is only able to manipulate their own messages (edit/delete). Hence a basic user 
+    should not be able to manipulate anyone else's messages without having higher permissions. 
+  </li>
+  <br>
+  <li><h4>Encrypted Login Data:</h4> When a user logs into the message board it is important for their login details 
+    to be encrypted before it is sent to the server to be validated. This prevents any malicious attackers from 
+    gaining access to the user’s account as they will not be able to get the login details. 
+  </li>
+  <br>
+  <li><h4>Message Accessibility:</h4> By default, there are some messages for the public and can be seen by all users, 
+    even those considered guests that may not have an account. At the same time there are also VIP messages that cannot 
+    be seen by the public and need special access/permissions. Which is why there is a need to properly validate a user’s 
+    permissions/access and give proper secure access. 
+  </li>
+  <br>
+  <li><h4>Encrypted Message Data:</h4> Since there are non-public VIP messages it is important for those to stay confidential to 
+    the general public. To ensure confidentiality the messages must be encrypted when VIP message data is getting sent 
+    between the message board and the various servers. So that no user below a VIP can access them. 
+  </li>
+  <br>
+  <li><h4>User Authentication:</h4> By any small chance a user’s information is leaked or gained by a 3rd party it is important 
+    for a 2nd Factor authentication to be put in place. This will validate the identity of the user and make sure that 
+    the party using the message board is the user themselves. 
+  </li>
+  <br>
+  <li><h4>Key Distribution:</h4> Implementing a secure way to distribute keys among the system is a necessity. This guarantees 
+    that data is properly encrypted and can also be decrypted while maintaining confidentiality. But if the key is not 
+    securely distributed an attacker can gain access decrypt or possibly encrypt malicious data into the system.
+  </li>
+  <br>
+  <li><h4>Audit Logging:</h4> A log that tracks various user activities from messages, logins, etc. This helps with detecting 
+    any unauthorized activity or malicious intent and helps hold various bad actors accountable. 
+  </li>
+  <br>
+  <li><h4>Data Integrity:</h4> Ensure that when a message is posted it is not possible to be changed unless an administrator or 
+    the original poster wants it to. This ensures that all the posts on the board are genuine. 
+  </li>
+  <br>
+  <li><h4>Inactive Session Management:</h4> Depending on how long the message board has been opened by a user, the board should 
+    automatically log out the user depending on the length of inactivity of the user. This ensures that no physical outside 
+    force that is not the user to gain access to the message board. It also prevents various things such as session hijacking. 
+  </li>
+  <br>
+  <li><h4>Access Removal:</h4> If a user’s status changes from VIP to a normal user, they must no longer have access to any of the VIP 
+    messages/boards. Hence it must be ensured that privileges are properly removed and that they no longer have access. 
+  </li>
+  <br>
+  <li><h4>Encrypted Backups:</h4> Important for the message board to have backups of the data in case any of the servers run into any 
+    problems with the authenticity of the data or potential data corruption/loss. Hence it is necessary for the server to maintain 
+    the data in an encrypted way so that data can be recovered. 
+  </li>
+  <br>
+  <li><h4>Secure Account Recovery:</h4> Having a proper way for a user to securely recover their account if they have forgotten their logins. 
+    While also ensuring that they identify themselves, so another individual does not gain access to another account. This can be done 
+    by using security questions, text message or email verification.
+  </li>
+  <br>
+  <li><h4>Input Validation:</h4> Ensures that all input fields in the system have proper input validation and prevents injections and any other 
+    malicious inputs. So that an attacker may not abuse any form of inputs to attack the system. 
+  </li>
+  <br>
+  <li><h4>Login Attempts:</h4> Limit the number of times a user can attempt to login to an account. This prevents any attacker from trying 
+    to secure access into the system through another’s account, especially prevents brute force. 
+  </li>
+  <br>
+  <li><h4>Bot Detection:</h4> Implementing a form of bot-detection such as CAPTCHAs will ensure that message boards are safe from automated
+     spam. This also helps to make sure that all users can be held accountable for their actions as they are all legitimate. 
+     So, implementing a form of CAPTCHA during initial use will potentially help from any automated malicious intents. 
+    </li>
+    <br>
+  <li><h4>Virus Protection:</h4> As users post on the message board there may be different files that may be distributed. To guarantee 
+    the safety of other users it is important for files to be scanned for malware and must be done so in a secure environment. 
+    This helps ensure that the reputation of the board can be seen as safe. 
+  </li>
+  <br>
+  <li><h4>Complete Mediation:</h4> Every access to the resource server will be checked without relying on cached data. Every request to 
+    post, edit, or view content on the platform will be strictly validated against the defined permissions each time. 
+  </li>
+  <br>
+  <li><h4>Fail-safe defaults:</h4> Access to restricted (VIP) content is determined by the permission level of the user, instead 
+    of acting through exclusions.  
+  </li>
+  <br>
+  <li><h4>Least Privilege:</h4> Users with non-VIP access only have the necessary permissions to allow for participation on CypherSpace, 
+    and no additional actions outside of their planned scope are permitted. 
+  </li>
+</ol>
+
+<!-- END CHANGES HERE -->
+    </section>
+    <section id="references">
+      <h2>4. References</h2>
+<!-- BEGIN CHANGES HERE -->
+
+<p>No reference right now</p>
+
+<!-- END CHANGES HERE -->
+    </section>
+  </body>
+</html>
