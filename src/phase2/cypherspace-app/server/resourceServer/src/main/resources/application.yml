@@ -1,0 +1,7 @@
+server:
+  port: 4064
+  shutdown: graceful # Enables graceful shutdown
+
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 30s # waiting time before force shutdown

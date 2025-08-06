@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    border-bottom: 2px solid #666;
+    width: 100%;
+    
+}
+
+.admin-container {
+    margin: 20px auto;
+    margin-top: 100px;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    column-gap: 40px;
+    max-height: 90vh;
+    justify-content: center;
+}
+.forms-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px; 
+    align-items: stretch; 
+}
+thead{
+    color: #000000;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.user-table th, .user-table td {
+    padding: 12px;
+    border: 1px solid hsl(0, 0%, 0%);
+    font-family: Arial, sans-serif;
+}
+
+.user-table th {
+    background-color: #ffffff;
+    text-transform: uppercase;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.user-table tr:nth-child(even) {
+    color: #000000;
+}
+
+.admin-row {
+    background-color: #00d9ff;
+}
+
+.user-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.create-user-form {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    text-align: left;
+    width: 90%;
+    height: 90%; 
+    box-sizing: border-box; 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"], .form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #444242;
+    border-radius: 4px;
+}
+
+.form-group input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.deleteBtn{
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#del{
+    width: 100px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.group-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.group-table th, .group-table td {
+    padding: 12px;
+    border: 1px solid #000000;
+    font-family: Arial, sans-serif;
+}
+
+.group-table th {
+    background-color: #ffffff;
+    text-transform: uppercase;
+}
+
+.group-table tr:nth-child(even) {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.group-table tr:hover {
+    background-color: #f1f1f1;
+}
+#lists{
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+#RemoveUserFrom{
+    margin-top: -18px;
+    margin-bottom: 18px;
+}
+
+.user-table, .group-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #424040;
+    height: 600px;
+    overflow-y: auto; 
+    display: block;
+}
+
+.pixel-font {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 18px; 
+    text-align: center;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+#group-list-title {
+    margin-top: 10px; 
+    margin-bottom: -10px;
+}

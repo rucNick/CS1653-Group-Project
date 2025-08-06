@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    background-image: url('/public/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-title {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    color: #fff;
+    font-size: 5rem;
+    margin-top: 40px;
+    margin-bottom: -40px;
+    text-align: center;
+    opacity: 1;
+    animation: fadeInTitle 2s ease-in-out forwards;
+}
+
+.register-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 100%; /* 限制最大宽度 */
+    margin-top: 100px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInLogin 2.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.register-form h2,
+.input-group label,
+.register-btn,
+.go-back-login h4,
+.go-back-login a {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #1a73e8 !important;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.register-btn:hover {
+    background-color: #1669c1;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px; /* Added space between error message and go-back section */
+    animation: blink 1s; /* Blinking animation */
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.go-back-login h4 {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #fff;
+}
+
+.go-back-login a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #1a73e8;
+    margin-top: 5px;
+}
+
+.go-back-login a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLogin {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 880px) {
+    .site-title {
+        font-size: 3rem;
+    }
+
+    .register-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .register-btn, .input-group input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .input-group label, .go-back-login h4, .go-back-login a {
+        font-size: 0.8rem;
+    }
+}
