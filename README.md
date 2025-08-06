@@ -1,4 +1,5 @@
 # CS1653-Group-Project
+**Contributors: @rucNick, @Alex-Acero-Security, @Xingcheng03, @DylanKaing**
 
 # CypherSpace
 
